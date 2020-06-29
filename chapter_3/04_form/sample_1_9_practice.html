@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <select v-model="selected">
+          <option disabled value="">Please select one</option>
+          <option>Vue</option>
+          <option>Angular</option>
+          <option>React</option>
+        </select>
+        <br />
+        <span>Selected: {{ selected }}</span>
+      </div>
+
+      <p>複数選択</p>
+      <div>
+        <select multiple v-model="selected2">
+          <option disabled value="">Please select one</option>
+          <option>Vue</option>
+          <option>Angular</option>
+          <option>React</option>
+        </select>
+        <br />
+        <span>Selected: {{ selected2 }}</span>
+      </div>
+
+      <p>APIなど外部からデータを取得することを想定</p>
+      <div>
+        <select multiple v-model="selected3">
+          <option v-for="value in list">{{ value }}</option>
+        </select>
+        <br />
+        <span>Selected: {{ selected3 }}</span>
+      </div>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        created() {
+          // APIなど外部からデータを取得することを想定
+          this.list = ["Vue", "Angular", "React"];
+        },
+        data: {
+          selected: null,
+          selected2: [],
+          selected3: [],
+          list: [],
+        },
+      });
+    </script>
+  </body>
+</html>
