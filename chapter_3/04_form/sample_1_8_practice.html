@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input type="radio" id="Vue" value="Vue" v-model="picked">
+      <label for="Vue">Vue</label>
+      <br>
+
+      <input type="radio" id="Angular" value="Angular" v-model="picked">
+      <label for="Angular">Angular</label>
+      <br>
+
+      <input type="radio" id="React" value="React" v-model="picked">
+      <label for="React">React</label>
+      <br>
+      <span>Picked: {{ picked }}</span>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          picked: null
+        }
+      });
+    </script>
+  </body>
+</html>
