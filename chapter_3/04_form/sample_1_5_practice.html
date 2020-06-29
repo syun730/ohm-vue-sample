@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <input type="checkbox" id="checkbox" v-model="flag" />
+        <label for="checkbox">{{ flag }}</label>
+      </div>
+
+      <p>true-valueとfalse-valueで値の変換</p>
+      <div>
+        <input
+          type="checkbox"
+          id="checkbox2"
+          v-model="flag2"
+          true-value="1"
+          false-value="0"
+        />
+        <label for="checkbox2">{{ flag2 }}</label>
+      </div>
+
+      <p>複数のチェックボックス</p>
+      <div>
+        <input type="checkbox" value="もも" v-model="fruits" />
+        <label for="もも">もも</label>
+        <input type="checkbox" value="りんご" v-model="fruits" />
+        <label for="りんご">りんご</label>
+        <input type="checkbox" value="みかん" v-model="fruits" />
+        <label for="みかん">みかん</label>
+        <br />
+        <span>選択したくだもの: {{ fruits }}</span>
+      </div>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          flag: false,
+          flag2: 0,
+          fruits: []
+        },
+      });
+    </script>
+  </body>
+</html>
