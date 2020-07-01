@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <style>
+    .v-enter-active,
+    .v-leave-active {
+      transition: opacity 1s;
+    }
+    .v-enter,
+    .v-leave-to {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <transition mode="out-in">
+      <button v-if="toggle" key="on" @click="toggle = !toggle">On</button>
+      <button v-else key="off" @click="toggle = !toggle">Off</button>
+    </transition>
+  </div>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        toggle: true
+      }
+    });
+  </script>
+</body>
+</html>
